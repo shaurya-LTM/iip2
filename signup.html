@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Expense Tracker – Sign Up</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Load Supabase SDK first -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase.js"></script>
+  <script src="signup.js" defer></script>
+</head>
+<body>
+  <div class="card" id="signup-card">
+    <h2>Create Account</h2>
+    <input type="email" id="email" placeholder="Email" required>
+    <input type="password" id="password" placeholder="Password" required>
+    <button id="btn-signup">Sign Up</button>
+    <p id="msg" style="color:#f88;"></p>
+    <p style="margin-top:1rem;">Already have an account? <a href="index.html" style="color:#4a90e2;">Sign In</a></p>
+  </div>
+</body>
+</html>
