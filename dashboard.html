@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Expense Tracker – Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="supabase.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5.1.1/dist/tesseract.min.js"></script>
+  <script src="transactions.js" defer></script>
+</head>
+<body>
+  <div class="card" style="width:90%;max-width:800px;">
+    <h2>Welcome, <span id="username"></span></h2>
+
+    <!-- Summary boxes -->
+    <div id="summary">
+      <div class="summary-box">Income: <span id="total-income">0</span></div>
+      <div class="summary-box">Expense: <span id="total-expense">0</span></div>
+      <div class="summary-box">Balance: <span id="balance">0</span></div>
+    </div>
+
+    <!-- New transaction form -->
+    <section>
+      <h3>New Transaction</h3>
+      <select id="type">
+        <option value="income">Income (+)</option>
+        <option value="expense">Expense (‑)</option>
+      </select>
+      <input type="date" id="date">
+      <input type="number" step="0.01" id="amount" placeholder="Amount">
+      <input type="text" id="category" placeholder="Category">
+      <input type="text" id="desc" placeholder="Description (optional)">
+      <button id="btn-add">Add</button>
+    </section>
+
+    <!-- Quick‑scan receipt -->
+    <section style="margin-top:1rem;">
+      <h3>Quick‑scan receipt</h3>
+      <video id="cam" autoplay playsinline width="100%" style="border-radius:6px;"></video>
+      <button id="btn-scan" style="margin-top:.5rem;">Capture & Scan</button>
+      <p id="scan-msg"></p>
+    </section>
+
+    <!-- Transaction table -->
+    <section style="margin-top:1rem;">
+      <h3>Transactions</h3>
+      <table id="tx-table" style="width:100%;border-collapse:collapse;">
+        <thead>
+          <tr>
+            <th>Date</th><th>Type</th><th>Category</th><th>Amount</th><th>Description</th><th>Actions</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <button onclick="logout()" style="margin-top:1rem;background:#e74c3c;">Logout</button>
+  </div>
+</body>
+</html>

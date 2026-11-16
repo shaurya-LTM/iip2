@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Expense Tracker – Login</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="supabase.js"></script>
+  <script src="auth.js" defer></script>
+</head>
+<body>
+  <div class="card" id="login-card">
+    <h2>Sign in</h2>
+
+    <!-- STEP 1 – Email -->
+    <div id="step-email">
+      <input type="email" id="email" placeholder="Email" required>
+      <button id="btn-email">Next</button>
+    </div>
+
+    <!-- STEP 2 – Password -->
+    <div id="step-pass" style="display:none;">
+      <input type="password" id="password" placeholder="Password" required>
+      <button id="btn-pass">Next</button>
+    </div>
+
+    <!-- STEP 3 – Passkey (WebAuthn) -->
+    <div id="step-passkey" style="display:none;">
+      <p>Tap your device’s fingerprint sensor or use your security key.</p>
+      <button id="btn-passkey">Authenticate</button>
+    </div>
+
+    <p id="msg" style="color:#f88;"></p>
+  </div>
+</body>
+</html>

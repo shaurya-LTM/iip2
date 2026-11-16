@@ -1,0 +1,17 @@
+/* Global reset */
+*{margin:0;padding:0;box-sizing:border-box;font-family:system-ui,sans-serif;}
+body{background:#111;color:#eee;min-height:100vh;display:flex;justify-content:center;align-items:center;}
+
+/* Card with subtle 3‑D */
+.card{background:#222;border-radius:12px;padding:1.5rem;box-shadow:0 8px 12px rgba(0,0,0,.6);transform:perspective(800px) rotateX(2deg) rotateY(-2deg);transition:transform .2s;}
+.card:hover{transform:perspective(800px) rotateX(0deg) rotateY(0deg);}
+
+/* Form styling */
+input,button,select{width:100%;padding:.6rem;margin:.4rem 0;border:none;border-radius:6px;}
+input,select{background:#333;color:#eee;}
+button{background:#4a90e2;cursor:pointer;}
+button:hover{background:#357ab8;}
+
+/* Dashboard layout */
+#summary{display:flex;gap:1rem;margin-bottom:1rem;}
+.summary-box{flex:1;background:#2a2a2a;text-align:center;padding:.8rem;border-radius:8px;font-size:1.2rem;}
