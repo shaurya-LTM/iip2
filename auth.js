@@ -22,8 +22,13 @@ document.getElementById('btn-pass').onclick = async () => {
   const { error } = await supabase.auth.signInWithPassword({ email: userEmail, password });
   if (error) return setMsg(error.message);
 
-  stepPass.style.display = 'none';
-  stepPasskey.style.display = 'block';
+  // If you don't need a passkey, go straight to the app
+  // Comment out the next two lines to skip the passkey step
+  // stepPass.style.display = 'none';
+  // stepPasskey.style.display = 'block';
+
+  // Directly load dashboard after successful password login
+  window.location.href = 'dashboard.html';
 };
 
 // Passkey step (WebAuthn)
