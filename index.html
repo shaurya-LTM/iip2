@@ -1,1 +1,57 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Ledgerly — Sign in</title><link rel="stylesheet" href="style.css"><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="supabase.js"></script><script src="auth.js" defer></script></head><body><main class="auth-shell"><section class="card"><div class="eyebrow">Personal finance</div><h1 class="auth-title">Welcome back</h1><p class="muted">Sign in to see your money clearly.</p><form id="login-form" novalidate><label for="email">Email address</label><input id="email" type="email" autocomplete="email" placeholder="you@example.com" required autofocus><label for="password">Password</label><input id="password" type="password" autocomplete="current-password" placeholder="Your password" required minlength="6"><button id="btn-login" type="submit">Sign in</button></form><p id="msg" class="message" role="status" aria-live="polite"></p><p class="auth-switch muted">New here? <a href="signup.html">Create an account</a></p></section></main></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Expense Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <h1>Expense Tracker</h1>
+    <p class="hint">Your data is saved in this browser.</p>
+
+    <section class="totals">
+      <div><span>Income</span><strong id="income-total">₹0.00</strong></div>
+      <div><span>Expenses</span><strong id="expense-total">₹0.00</strong></div>
+      <div><span>Balance</span><strong id="balance-total">₹0.00</strong></div>
+    </section>
+
+    <section class="card">
+      <h2 id="form-title">Add transaction</h2>
+      <form id="transaction-form">
+        <input id="edit-id" type="hidden">
+        <label for="type">Type</label>
+        <select id="type"><option value="expense">Expense</option><option value="income">Income</option></select>
+
+        <label for="date">Date</label>
+        <input id="date" type="date" required>
+
+        <label for="amount">Amount</label>
+        <input id="amount" type="number" min="0.01" step="0.01" required>
+
+        <label for="category">Category</label>
+        <input id="category" placeholder="Food, travel, salary..." required>
+
+        <label for="notes">Notes</label>
+        <input id="notes" placeholder="Optional">
+
+        <button id="save-button" type="submit">Add transaction</button>
+        <button id="cancel-button" class="secondary hidden" type="button">Cancel edit</button>
+      </form>
+    </section>
+
+    <section class="card">
+      <div class="table-title"><h2>Transactions</h2><button id="clear-button" class="danger" type="button">Clear all</button></div>
+      <p id="empty-message" class="hint">No transactions yet.</p>
+      <div class="table-wrap">
+        <table id="transactions-table">
+          <thead><tr><th>Date</th><th>Type</th><th>Category</th><th>Amount</th><th>Notes</th><th></th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
